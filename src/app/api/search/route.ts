@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { searchTrains, SEAT_CLASSES, delay, type AuthCredentials } from "@/lib/api";
+import { searchTrains, type AuthCredentials } from "@/lib/api";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -36,44 +36,37 @@ export async function POST(req: NextRequest) {
 
   const merged: Record<string, MergedTrain> = {};
 
-  for (let i = 0; i < SEAT_CLASSES.length; i += 3) {
-    const batch = SEAT_CLASSES.slice(i, i + 3);
-    const results = await Promise.allSettled(
-      batch.map((sc) => searchTrains(creds, from_city, to_city, date, sc))
-    );
+  // One query returns ALL seat classes for every matching train, so a single
+  // call suffices (no need to loop the 10 SEAT_CLASSES — that just multiplies
+  // load against a rate-limited endpoint). SHULOV is a safe, widely-present class.
+  const trains = await searchTrains(creds, from_city, to_city, date, "SHULOV");
 
-    for (const r of results) {
-      if (r.status !== "fulfilled") continue;
-      for (const t of r.value) {
-        const id = t.trip_id || t.trip_number;
-        if (!merged[id]) {
-          merged[id] = {
-            trip_id: t.trip_id,
-            trip_number: t.trip_number,
-            train_name: t.train_model,
-            departure: t.departure_date_time,
-            arrival: t.arrival_date_time,
-            travel_time: t.travel_time,
-            seats: {},
-          };
-        }
-        for (const st of t.seat_types || []) {
-          const cls = st.type;
-          if (!merged[id].seats[cls]) {
-            merged[id].seats[cls] = {
-              type: cls,
-              fare: st.fare,
-              vat: st.vat_amount || 0,
-              online: st.seat_counts?.online || 0,
-              offline: st.seat_counts?.offline || 0,
-            };
-          }
-        }
-      }
+  for (const t of trains) {
+    const id = t.trip_id || t.trip_number;
+    if (!merged[id]) {
+      merged[id] = {
+        trip_id: t.trip_id,
+        trip_number: t.trip_number,
+        // The API returns the train NAME in trip_number and the bare number in
+        // train_model. Display the name.
+        train_name: t.trip_number,
+        departure: t.departure_date_time,
+        arrival: t.arrival_date_time,
+        travel_time: t.travel_time,
+        seats: {},
+      };
     }
-
-    if (i + 3 < SEAT_CLASSES.length) {
-      await delay(150);
+    for (const st of t.seat_types || []) {
+      const cls = st.type;
+      if (!merged[id].seats[cls]) {
+        merged[id].seats[cls] = {
+          type: cls,
+          fare: st.fare,
+          vat: st.vat_amount || 0,
+          online: st.seat_counts?.online || 0,
+          offline: st.seat_counts?.offline || 0,
+        };
+      }
     }
   }
 

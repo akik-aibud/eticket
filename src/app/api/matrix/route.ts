@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getTrainRoutes, searchTrains, delay, type AuthCredentials } from "@/lib/api";
+import { routeFromCache } from "@/lib/routes-cache";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -18,8 +19,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Missing params" }, { status: 400 });
   }
 
-  // Step 1: Get the train's route (all stops)
-  const routeData = await getTrainRoutes(tripNumber, date);
+  // Step 1: Get the train's route (all stops). Prefer the bundled routes cache
+  // (static stop order, cuts an auth'd API call); fall back to a live fetch.
+  let routeData = routeFromCache(tripNumber);
+  if (!routeData) {
+    routeData = await getTrainRoutes(creds, tripNumber, date);
+  }
   if (!routeData?.data?.routes || routeData.data.routes.length === 0) {
     return NextResponse.json({ error: "Could not fetch route" });
   }
@@ -50,9 +55,11 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  // Fetch in batches of 3 (one search per pair using SHULOV class, which returns all seat types)
-  for (let i = 0; i < pairs.length; i += 3) {
-    const batch = pairs.slice(i, i + 3);
+  // Fetch in small batches (one search per pair using SHULOV class, which
+  // returns all seat types). Concurrency 2 + 1.2s spacing keeps us under the
+  // API's 429 rate limit; fetchWithRetry handles any that still slip through.
+  for (let i = 0; i < pairs.length; i += 2) {
+    const batch = pairs.slice(i, i + 2);
 
     const results = await Promise.allSettled(
       batch.map(async (p) => {
@@ -88,8 +95,8 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    if (i + 3 < pairs.length) {
-      await delay(200);
+    if (i + 2 < pairs.length) {
+      await delay(1200);
     }
   }
 
@@ -107,7 +114,7 @@ export async function POST(req: NextRequest) {
     route_info: {
       days: days.join(", "),
       duration: totalDuration,
-      stops: routeStops.map((s: { city: string; departure_time?: string; arrival_time?: string }) => ({
+      stops: routeStops.map((s: { city: string; departure_time?: string | null; arrival_time?: string | null }) => ({
         city: s.city,
         departure: s.departure_time || "",
         arrival: s.arrival_time || "",

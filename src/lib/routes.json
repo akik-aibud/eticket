@@ -1,0 +1,1013 @@
+{
+"810": {
+"train_name": "BURIMARI EXPRESS (810)",
+"days": [
+"Fri",
+"Sat",
+"Sun",
+"Mon",
+"Wed",
+"Thu"
+],
+"total_duration": "09:20",
+"routes": [
+{
+"city": "Lalmonirhat",
+"arrival_time": null,
+"departure_time": "09:10 pm BST",
+"halt": null,
+"duration": null
+},
+{
+"city": "Burimari",
+"arrival_time": null,
+"departure_time": "06:00 pm BST",
+"halt": "---",
+"duration": "---"
+},
+{
+"city": "Patgram",
+"arrival_time": "06:15 pm BST",
+"departure_time": "06:20 pm BST",
+"halt": "05",
+"duration": "00:15"
+},
+{
+"city": "Barkhata",
+"arrival_time": "06:47 pm BST",
+"departure_time": "06:50 pm BST",
+"halt": "03",
+"duration": "00:27"
+},
+{
+"city": "Hatibandha",
+"arrival_time": "07:02 pm BST",
+"departure_time": "07:05 pm BST",
+"halt": "03",
+"duration": "00:12"
+},
+{
+"city": "Tushbhandar",
+"arrival_time": "07:33 pm BST",
+"departure_time": "07:35 pm BST",
+"halt": "02",
+"duration": "00:28"
+},
+{
+"city": "Kankina",
+"arrival_time": "10:43 pm BST",
+"departure_time": "10:45 pm BST",
+"halt": "02",
+"duration": "03:08"
+},
+{
+"city": "Kaunia",
+"arrival_time": "09:33 pm BST",
+"departure_time": "09:36 pm BST",
+"halt": "03",
+"duration": "01:12"
+},
+{
+"city": "Gaibandha",
+"arrival_time": "10:42 pm BST",
+"departure_time": "10:47 pm BST",
+"halt": "05",
+"duration": "01:06"
+},
+{
+"city": "Bonar_Para",
+"arrival_time": "11:09 pm BST",
+"departure_time": "11:12 pm BST",
+"halt": "03",
+"duration": "00:22"
+},
+{
+"city": "Mahimaganj",
+"arrival_time": "11:22 pm BST",
+"departure_time": null,
+"halt": "---",
+"duration": "00:10"
+},
+{
+"city": "Bogura",
+"arrival_time": "12:03 am BST",
+"departure_time": "12:08 am BST",
+"halt": "05",
+"duration": "---"
+},
+{
+"city": "Santahar",
+"arrival_time": "01:00 am BST",
+"departure_time": "01:05 am BST",
+"halt": "05",
+"duration": "00:52"
+},
+{
+"city": "Natore",
+"arrival_time": "02:03 am BST",
+"departure_time": "02:13 am BST",
+"halt": "10",
+"duration": "00:58"
+},
+{
+"city": "Dhaka",
+"arrival_time": "06:30 am BST",
+"departure_time": null,
+"halt": null,
+"duration": "04:17"
+}
+]
+},
+"798": {
+"train_name": "KURIGRAM EXPRESS (798)",
+"days": [
+"Fri",
+"Sat",
+"Sun",
+"Mon",
+"Wed",
+"Thu"
+],
+"total_duration": "09:55",
+"routes": [
+{
+"city": "Kurigram",
+"arrival_time": null,
+"departure_time": "07:10 am BST",
+"halt": null,
+"duration": null
+},
+{
+"city": "Kaunia",
+"arrival_time": "07:50 am BST",
+"departure_time": "07:53 am BST",
+"halt": "03",
+"duration": "00:40"
+},
+{
+"city": "Rangpur",
+"arrival_time": "08:13 am BST",
+"departure_time": "08:23 am BST",
+"halt": "10",
+"duration": "00:20"
+},
+{
+"city": "Badarganj",
+"arrival_time": "08:51 am BST",
+"departure_time": "08:54 am BST",
+"halt": "03",
+"duration": "00:28"
+},
+{
+"city": "Parbatipur",
+"arrival_time": "09:25 am BST",
+"departure_time": "09:45 am BST",
+"halt": "20",
+"duration": "00:31"
+},
+{
+"city": "Joypurhat",
+"arrival_time": "10:42 am BST",
+"departure_time": "10:45 am BST",
+"halt": "03",
+"duration": "00:57"
+},
+{
+"city": "Santahar",
+"arrival_time": "11:20 am BST",
+"departure_time": "11:30 am BST",
+"halt": "10",
+"duration": "00:35"
+},
+{
+"city": "Madhnagar",
+"arrival_time": "12:02 pm BST",
+"departure_time": "12:04 pm BST",
+"halt": "02",
+"duration": "00:32"
+},
+{
+"city": "Natore",
+"arrival_time": "12:19 pm BST",
+"departure_time": "12:22 pm BST",
+"halt": "03",
+"duration": "00:15"
+},
+{
+"city": "Dhaka",
+"arrival_time": "05:05 pm BST",
+"departure_time": null,
+"halt": null,
+"duration": "04:43"
+}
+]
+},
+"794": {
+"train_name": "PANCHAGARH EXPRESS (794)",
+"days": [
+"Fri",
+"Sat",
+"Sun",
+"Mon",
+"Tue",
+"Wed",
+"Thu"
+],
+"total_duration": "10:00",
+"routes": [
+{
+"city": "Panchagarh",
+"arrival_time": null,
+"departure_time": "12:10 pm BST",
+"halt": null,
+"duration": null
+},
+{
+"city": "Thakurgaon_Road",
+"arrival_time": "12:50 pm BST",
+"departure_time": "12:55 pm BST",
+"halt": "05",
+"duration": "00:40"
+},
+{
+"city": "Pirganj",
+"arrival_time": "01:20 pm BST",
+"departure_time": "01:23 pm BST",
+"halt": "03",
+"duration": "00:25"
+},
+{
+"city": "Dinajpur",
+"arrival_time": "02:12 pm BST",
+"departure_time": "02:20 pm BST",
+"halt": "08",
+"duration": "00:49"
+},
+{
+"city": "Parbatipur",
+"arrival_time": "03:00 pm BST",
+"departure_time": "03:20 pm BST",
+"halt": "20",
+"duration": "00:40"
+},
+{
+"city": "Joypurhat",
+"arrival_time": "04:13 pm BST",
+"departure_time": "04:16 pm BST",
+"halt": "03",
+"duration": "00:53"
+},
+{
+"city": "Santahar",
+"arrival_time": "04:50 pm BST",
+"departure_time": "04:55 pm BST",
+"halt": "05",
+"duration": "00:34"
+},
+{
+"city": "Natore",
+"arrival_time": "05:36 pm BST",
+"departure_time": "05:39 pm BST",
+"halt": "03",
+"duration": "00:41"
+},
+{
+"city": "Dhaka",
+"arrival_time": "10:10 pm BST",
+"departure_time": null,
+"halt": null,
+"duration": "04:31"
+}
+]
+},
+"772": {
+"train_name": "RANGPUR EXPRESS (772)",
+"days": [
+"Fri",
+"Sat",
+"Mon",
+"Tue",
+"Wed",
+"Thu"
+],
+"total_duration": "10:00",
+"routes": [
+{
+"city": "Rangpur",
+"arrival_time": null,
+"departure_time": "08:00 pm BST",
+"halt": null,
+"duration": null
+},
+{
+"city": "Kaunia",
+"arrival_time": "08:20 pm BST",
+"departure_time": "08:40 pm BST",
+"halt": "20",
+"duration": "00:20"
+},
+{
+"city": "Kurigram",
+"arrival_time": "07:50 pm BST",
+"departure_time": "07:30 pm BST",
+"halt": "20",
+"duration": "00:50"
+},
+{
+"city": "Pirgacha",
+"arrival_time": "08:56 pm BST",
+"departure_time": "08:58 pm BST",
+"halt": "02",
+"duration": "01:26"
+},
+{
+"city": "Bamondanga",
+"arrival_time": "09:15 pm BST",
+"departure_time": "09:18 pm BST",
+"halt": "03",
+"duration": "00:17"
+},
+{
+"city": "Gaibandha",
+"arrival_time": "09:47 pm BST",
+"departure_time": "09:52 pm BST",
+"halt": "05",
+"duration": "00:29"
+},
+{
+"city": "Bonar_Para",
+"arrival_time": "10:15 pm BST",
+"departure_time": "10:25 pm BST",
+"halt": "10",
+"duration": "00:23"
+},
+{
+"city": "Sonatola",
+"arrival_time": "10:42 pm BST",
+"departure_time": "10:44 pm BST",
+"halt": "02",
+"duration": "00:17"
+},
+{
+"city": "Bogura",
+"arrival_time": "11:15 pm BST",
+"departure_time": "11:20 pm BST",
+"halt": "05",
+"duration": "00:31"
+},
+{
+"city": "Talora",
+"arrival_time": "11:40 pm BST",
+"departure_time": "11:42 pm BST",
+"halt": "02",
+"duration": "00:20"
+},
+{
+"city": "Santahar",
+"arrival_time": "12:10 am BST",
+"departure_time": "12:15 am BST",
+"halt": "05",
+"duration": "00:28"
+},
+{
+"city": "Natore",
+"arrival_time": "01:25 am BST",
+"departure_time": "01:28 am BST",
+"halt": "03",
+"duration": "01:10"
+},
+{
+"city": "Ibrahimabad",
+"arrival_time": "03:34 am BST",
+"departure_time": "03:36 am BST",
+"halt": "02",
+"duration": "02:06"
+},
+{
+"city": "Dhaka",
+"arrival_time": "06:00 am BST",
+"departure_time": null,
+"halt": null,
+"duration": "02:24"
+}
+]
+},
+"766": {
+"train_name": "NILSAGAR EXPRESS (766)",
+"days": [
+"Fri",
+"Sat",
+"Sun",
+"Mon",
+"Wed",
+"Thu"
+],
+"total_duration": "09:25",
+"routes": [
+{
+"city": "Chilahati",
+"arrival_time": null,
+"departure_time": "08:00 pm BST",
+"halt": null,
+"duration": null
+},
+{
+"city": "Domar",
+"arrival_time": "08:18 pm BST",
+"departure_time": "08:21 pm BST",
+"halt": "03",
+"duration": "00:18"
+},
+{
+"city": "Nilphamari",
+"arrival_time": "08:37 pm BST",
+"departure_time": "08:40 pm BST",
+"halt": "03",
+"duration": "00:16"
+},
+{
+"city": "Saidpur",
+"arrival_time": "08:59 pm BST",
+"departure_time": "09:04 pm BST",
+"halt": "05",
+"duration": "00:19"
+},
+{
+"city": "Parbatipur",
+"arrival_time": "09:20 pm BST",
+"departure_time": "09:40 pm BST",
+"halt": "20",
+"duration": "00:16"
+},
+{
+"city": "Fulbari",
+"arrival_time": "09:58 pm BST",
+"departure_time": "10:00 pm BST",
+"halt": "02",
+"duration": "00:18"
+},
+{
+"city": "Birampur",
+"arrival_time": "10:11 pm BST",
+"departure_time": "10:14 pm BST",
+"halt": "03",
+"duration": "00:11"
+},
+{
+"city": "Joypurhat",
+"arrival_time": "10:43 pm BST",
+"departure_time": "10:46 pm BST",
+"halt": "03",
+"duration": "00:29"
+},
+{
+"city": "Akkelpur",
+"arrival_time": "11:00 pm BST",
+"departure_time": "11:02 pm BST",
+"halt": "02",
+"duration": "00:14"
+},
+{
+"city": "Santahar",
+"arrival_time": "11:20 pm BST",
+"departure_time": "11:25 pm BST",
+"halt": "05",
+"duration": "00:18"
+},
+{
+"city": "Ahsanganj",
+"arrival_time": "11:47 pm BST",
+"departure_time": "11:49 pm BST",
+"halt": "02",
+"duration": "00:22"
+},
+{
+"city": "Natore",
+"arrival_time": "12:10 am BST",
+"departure_time": "12:13 am BST",
+"halt": "03",
+"duration": "00:21"
+},
+{
+"city": "Muladhuli",
+"arrival_time": "01:12 am BST",
+"departure_time": "01:14 am BST",
+"halt": "02",
+"duration": "00:59"
+},
+{
+"city": "Ibrahimabad",
+"arrival_time": "02:46 am BST",
+"departure_time": "02:49 am BST",
+"halt": "03",
+"duration": "01:32"
+},
+{
+"city": "Joydebpur",
+"arrival_time": "04:11 am BST",
+"departure_time": "04:15 am BST",
+"halt": "04",
+"duration": "01:22"
+},
+{
+"city": "Dhaka",
+"arrival_time": "05:25 am BST",
+"departure_time": null,
+"halt": null,
+"duration": "01:10"
+}
+]
+},
+"758": {
+"train_name": "DRUTOJAN EXPRESS (758)",
+"days": [
+"Fri",
+"Sat",
+"Sun",
+"Mon",
+"Tue",
+"Wed",
+"Thu"
+],
+"total_duration": "11:35",
+"routes": [
+{
+"city": "Panchagarh",
+"arrival_time": null,
+"departure_time": "07:20 am BST",
+"halt": null,
+"duration": null
+},
+{
+"city": "Kismat",
+"arrival_time": "07:36 am BST",
+"departure_time": "07:38 am BST",
+"halt": "02",
+"duration": "00:16"
+},
+{
+"city": "Ruhia",
+"arrival_time": "07:46 am BST",
+"departure_time": "07:48 am BST",
+"halt": "02",
+"duration": "00:08"
+},
+{
+"city": "Thakurgaon_Road",
+"arrival_time": "08:02 am BST",
+"departure_time": "08:05 am BST",
+"halt": "03",
+"duration": "00:14"
+},
+{
+"city": "Pirganj",
+"arrival_time": "08:46 am BST",
+"departure_time": "08:48 am BST",
+"halt": "02",
+"duration": "00:41"
+},
+{
+"city": "Setabganj",
+"arrival_time": "09:02 am BST",
+"departure_time": "09:04 am BST",
+"halt": "02",
+"duration": "00:14"
+},
+{
+"city": "Dinajpur",
+"arrival_time": "09:36 am BST",
+"departure_time": "09:46 am BST",
+"halt": "10",
+"duration": "00:32"
+},
+{
+"city": "Chirirbandar",
+"arrival_time": "10:05 am BST",
+"departure_time": "10:07 am BST",
+"halt": "02",
+"duration": "00:19"
+},
+{
+"city": "Parbatipur",
+"arrival_time": "10:25 am BST",
+"departure_time": "10:45 am BST",
+"halt": "20",
+"duration": "00:18"
+},
+{
+"city": "Fulbari",
+"arrival_time": "11:03 am BST",
+"departure_time": "11:06 am BST",
+"halt": "03",
+"duration": "00:18"
+},
+{
+"city": "Birampur",
+"arrival_time": "11:17 am BST",
+"departure_time": "11:20 am BST",
+"halt": "03",
+"duration": "00:11"
+},
+{
+"city": "Panchbibi",
+"arrival_time": "11:40 am BST",
+"departure_time": "11:42 am BST",
+"halt": "02",
+"duration": "00:20"
+},
+{
+"city": "Joypurhat",
+"arrival_time": "11:53 am BST",
+"departure_time": "11:56 am BST",
+"halt": "03",
+"duration": "00:11"
+},
+{
+"city": "Akkelpur",
+"arrival_time": "12:09 pm BST",
+"departure_time": "12:11 pm BST",
+"halt": "02",
+"duration": "00:13"
+},
+{
+"city": "Santahar",
+"arrival_time": "12:35 pm BST",
+"departure_time": "12:40 pm BST",
+"halt": "05",
+"duration": "00:24"
+},
+{
+"city": "Ahsanganj",
+"arrival_time": "01:14 pm BST",
+"departure_time": "01:16 pm BST",
+"halt": "02",
+"duration": "00:34"
+},
+{
+"city": "Natore",
+"arrival_time": "01:38 pm BST",
+"departure_time": "01:41 pm BST",
+"halt": "03",
+"duration": "00:22"
+},
+{
+"city": "Ishwardi Bypass",
+"arrival_time": "02:26 pm BST",
+"departure_time": "02:28 pm BST",
+"halt": "02",
+"duration": "00:45"
+},
+{
+"city": "Chatmohar",
+"arrival_time": "02:48 pm BST",
+"departure_time": "02:51 pm BST",
+"halt": "03",
+"duration": "00:20"
+},
+{
+"city": "Jamtail",
+"arrival_time": "03:28 pm BST",
+"departure_time": "03:30 pm BST",
+"halt": "02",
+"duration": "00:37"
+},
+{
+"city": "Ibrahimabad",
+"arrival_time": "03:56 pm BST",
+"departure_time": "03:58 pm BST",
+"halt": "02",
+"duration": "00:26"
+},
+{
+"city": "Tangail",
+"arrival_time": "04:18 pm BST",
+"departure_time": "04:28 pm BST",
+"halt": "10",
+"duration": "00:20"
+},
+{
+"city": "Joydebpur",
+"arrival_time": "05:48 pm BST",
+"departure_time": "05:53 pm BST",
+"halt": "05",
+"duration": "01:20"
+},
+{
+"city": "Dhaka",
+"arrival_time": "06:55 pm BST",
+"departure_time": null,
+"halt": null,
+"duration": "01:02"
+}
+]
+},
+"752": {
+"train_name": "LALMONI EXPRESS (752)",
+"days": [
+"Sat",
+"Sun",
+"Mon",
+"Tue",
+"Wed",
+"Thu"
+],
+"total_duration": "09:55",
+"routes": [
+{
+"city": "Lalmonirhat",
+"arrival_time": null,
+"departure_time": "09:50 am BST",
+"halt": null,
+"duration": null
+},
+{
+"city": "Teesta_Junction",
+"arrival_time": "10:06 am BST",
+"departure_time": "10:08 am BST",
+"halt": "02",
+"duration": "00:16"
+},
+{
+"city": "Kaunia",
+"arrival_time": "10:15 am BST",
+"departure_time": "10:18 am BST",
+"halt": "03",
+"duration": "00:07"
+},
+{
+"city": "Pirgacha",
+"arrival_time": "10:34 am BST",
+"departure_time": "10:36 am BST",
+"halt": "02",
+"duration": "00:16"
+},
+{
+"city": "Bamondanga",
+"arrival_time": "10:52 am BST",
+"departure_time": "10:55 am BST",
+"halt": "03",
+"duration": "00:16"
+},
+{
+"city": "Gaibandha",
+"arrival_time": "11:24 am BST",
+"departure_time": "11:27 am BST",
+"halt": "03",
+"duration": "00:29"
+},
+{
+"city": "Bonar_Para",
+"arrival_time": "11:49 am BST",
+"departure_time": "11:52 am BST",
+"halt": "03",
+"duration": "00:22"
+},
+{
+"city": "Sonatola",
+"arrival_time": "12:09 pm BST",
+"departure_time": "12:11 pm BST",
+"halt": "02",
+"duration": "00:17"
+},
+{
+"city": "Bogura",
+"arrival_time": "12:41 pm BST",
+"departure_time": "12:44 pm BST",
+"halt": "03",
+"duration": "00:30"
+},
+{
+"city": "Santahar",
+"arrival_time": "01:30 pm BST",
+"departure_time": "01:35 pm BST",
+"halt": "05",
+"duration": "00:46"
+},
+{
+"city": "Natore",
+"arrival_time": "02:18 pm BST",
+"departure_time": "02:21 pm BST",
+"halt": "03",
+"duration": "00:43"
+},
+{
+"city": "Azim Nagar",
+"arrival_time": "02:48 pm BST",
+"departure_time": "02:50 pm BST",
+"halt": "02",
+"duration": "00:27"
+},
+{
+"city": "Boral_Bridge",
+"arrival_time": "03:37 pm BST",
+"departure_time": "03:39 pm BST",
+"halt": "02",
+"duration": "00:47"
+},
+{
+"city": "Ullapara",
+"arrival_time": "03:59 pm BST",
+"departure_time": "04:03 pm BST",
+"halt": "04",
+"duration": "00:20"
+},
+{
+"city": "SH M Monsur Ali",
+"arrival_time": "04:22 pm BST",
+"departure_time": "04:25 pm BST",
+"halt": "03",
+"duration": "00:19"
+},
+{
+"city": "Ibrahimabad",
+"arrival_time": "04:43 pm BST",
+"departure_time": "04:50 pm BST",
+"halt": "07",
+"duration": "00:18"
+},
+{
+"city": "Tangail",
+"arrival_time": "05:10 pm BST",
+"departure_time": "05:18 pm BST",
+"halt": "08",
+"duration": "00:20"
+},
+{
+"city": "Joydebpur",
+"arrival_time": "06:36 pm BST",
+"departure_time": "06:40 pm BST",
+"halt": "04",
+"duration": "01:18"
+},
+{
+"city": "Dhaka",
+"arrival_time": "07:45 pm BST",
+"departure_time": null,
+"halt": null,
+"duration": "01:05"
+}
+]
+},
+"706": {
+"train_name": "EKOTA EXPRESS (706)",
+"days": [
+"Fri",
+"Sat",
+"Sun",
+"Mon",
+"Tue",
+"Wed",
+"Thu"
+],
+"total_duration": "10:10",
+"routes": [
+{
+"city": "Panchagarh",
+"arrival_time": null,
+"departure_time": "09:10 pm BST",
+"halt": null,
+"duration": null
+},
+{
+"city": "Kismat",
+"arrival_time": "09:25 pm BST",
+"departure_time": "09:27 pm BST",
+"halt": "02",
+"duration": "00:15"
+},
+{
+"city": "Ruhia",
+"arrival_time": "09:34 pm BST",
+"departure_time": "09:36 pm BST",
+"halt": "02",
+"duration": "00:07"
+},
+{
+"city": "Thakurgaon_Road",
+"arrival_time": "09:51 pm BST",
+"departure_time": "09:54 pm BST",
+"halt": "03",
+"duration": "00:15"
+},
+{
+"city": "Pirganj",
+"arrival_time": "10:16 pm BST",
+"departure_time": "10:18 pm BST",
+"halt": "02",
+"duration": "00:22"
+},
+{
+"city": "Setabganj",
+"arrival_time": "10:32 pm BST",
+"departure_time": "10:34 pm BST",
+"halt": "02",
+"duration": "00:14"
+},
+{
+"city": "Dinajpur",
+"arrival_time": "11:05 pm BST",
+"departure_time": "11:13 pm BST",
+"halt": "08",
+"duration": "00:31"
+},
+{
+"city": "Chirirbandar",
+"arrival_time": "11:30 pm BST",
+"departure_time": "11:32 pm BST",
+"halt": "02",
+"duration": "00:17"
+},
+{
+"city": "Parbatipur",
+"arrival_time": "11:50 pm BST",
+"departure_time": "11:55 pm BST",
+"halt": "05",
+"duration": "00:18"
+},
+{
+"city": "Fulbari",
+"arrival_time": "12:28 am BST",
+"departure_time": "12:31 am BST",
+"halt": "03",
+"duration": "00:33"
+},
+{
+"city": "Birampur",
+"arrival_time": "12:42 am BST",
+"departure_time": "12:45 am BST",
+"halt": "03",
+"duration": "00:11"
+},
+{
+"city": "Panchbibi",
+"arrival_time": "01:05 am BST",
+"departure_time": "01:07 am BST",
+"halt": "02",
+"duration": "00:20"
+},
+{
+"city": "Joypurhat",
+"arrival_time": "01:18 am BST",
+"departure_time": "01:21 am BST",
+"halt": "03",
+"duration": "00:11"
+},
+{
+"city": "Akkelpur",
+"arrival_time": "01:35 am BST",
+"departure_time": "01:37 am BST",
+"halt": "02",
+"duration": "00:14"
+},
+{
+"city": "Santahar",
+"arrival_time": "01:55 am BST",
+"departure_time": "02:00 am BST",
+"halt": "05",
+"duration": "00:18"
+},
+{
+"city": "Natore",
+"arrival_time": "02:41 am BST",
+"departure_time": "02:44 am BST",
+"halt": "03",
+"duration": "00:41"
+},
+{
+"city": "Ullapara",
+"arrival_time": "04:12 am BST",
+"departure_time": "04:15 am BST",
+"halt": "03",
+"duration": "01:28"
+},
+{
+"city": "Ibrahimabad",
+"arrival_time": "04:50 am BST",
+"departure_time": "04:52 am BST",
+"halt": "02",
+"duration": "00:35"
+},
+{
+"city": "Tangail",
+"arrival_time": "05:12 am BST",
+"departure_time": "05:14 am BST",
+"halt": "02",
+"duration": "00:20"
+},
+{
+"city": "Joydebpur",
+"arrival_time": "06:18 am BST",
+"departure_time": "06:21 am BST",
+"halt": "03",
+"duration": "01:04"
+},
+{
+"city": "Dhaka",
+"arrival_time": "07:20 am BST",
+"departure_time": null,
+"halt": null,
+"duration": "00:59"
+}
+]
+}
+}

@@ -1,12 +1,141 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Typography — distinctive transit pairing */
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), var(--font-body), ui-sans-serif, sans-serif;
+  --font-mono: var(--font-mono-board), ui-monospace, "SF Mono", monospace;
+
+  /* Brand — Bangladesh Railway signal green */
+  --color-brand-50:  #e7fbef;
+  --color-brand-100: #c2f4d7;
+  --color-brand-200: #8fe9b6;
+  --color-brand-300: #51d790;
+  --color-brand-400: #1fbd71;
+  --color-brand-500: #07a25c;
+  --color-brand-600: #03844b;
+  --color-brand-700: #07683d;
+  --color-brand-800: #0a5233;
+  --color-brand-900: #08432b;
+
+  /* Amber — departure-board glow accent */
+  --color-board-300: #ffd874;
+  --color-board-400: #fbc02d;
+  --color-board-500: #f5a623;
+  --color-board-600: #d98613;
+
+  /* Ink — cool charcoal neutrals */
+  --color-ink-50:  #f4f7f5;
+  --color-ink-100: #e8eeea;
+  --color-ink-200: #d2ddd6;
+  --color-ink-300: #b3c1b9;
+  --color-ink-400: #84968b;
+  --color-ink-500: #5a6b60;
+  --color-ink-600: #3e4c44;
+  --color-ink-700: #28332d;
+  --color-ink-800: #18211c;
+  --color-ink-900: #0d1410;
+}
+
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  color-scheme: light;
+  --bg: #eef3ef;
+  --bg-elev: #ffffff;
+  --bg-board: #0d1612;
+  --border: #dde6e0;
+  --text: #0c1410;
+  --text-muted: #5a6b60;
+  --glow: rgba(7, 162, 92, 0.18);
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #080d0b;
+  --bg-elev: #101814;
+  --bg-board: #0a110e;
+  --border: #1e2a23;
+  --text: #e6efe9;
+  --text-muted: #88a092;
+  --glow: rgba(31, 189, 113, 0.22);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  /* layered atmosphere: faint rail-grid + radial glow from the top */
+  background-image:
+    radial-gradient(120% 80% at 50% -10%, var(--glow), transparent 60%),
+    linear-gradient(to right, color-mix(in srgb, var(--border) 55%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--border) 55%, transparent) 1px, transparent 1px);
+  background-size: 100% 100%, 30px 30px, 30px 30px;
+  background-attachment: fixed;
 }
+
+@layer utilities {
+  .surface {
+    background: var(--bg-elev);
+    border-color: var(--border);
+  }
+  .text-muted { color: var(--text-muted); }
+  .border-app { border-color: var(--border); }
+
+  /* Departure-board panel: near-black, amber mono text, inset glow */
+  .board {
+    background: var(--bg-board);
+    color: var(--color-board-400);
+    border: 1px solid color-mix(in srgb, var(--color-board-500) 22%, transparent);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04),
+                0 0 0 1px rgba(0,0,0,0.4),
+                0 10px 40px -12px rgba(0,0,0,0.6);
+  }
+  .board-text {
+    font-family: var(--font-mono);
+    color: var(--color-board-300);
+    text-shadow: 0 0 12px color-mix(in srgb, var(--color-board-400) 55%, transparent);
+    letter-spacing: 0.04em;
+  }
+
+  .grid-bg {
+    background-image:
+      radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--color-brand-400) 30%, transparent) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+
+  /* glow ring for primary CTAs */
+  .glow-brand { box-shadow: 0 8px 30px -8px color-mix(in srgb, var(--color-brand-500) 70%, transparent); }
+
+  .font-display { font-family: var(--font-display); }
+  .tnum { font-variant-numeric: tabular-nums; font-family: var(--font-mono); }
+}
+
+/* ── Motion ─────────────────────────────────── */
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.anim-in { animation: slide-in .3s cubic-bezier(.2,.7,.2,1) both; }
+
+/* split-flap style flip for board numbers */
+@keyframes flap {
+  0%   { transform: rotateX(-90deg); opacity: 0; }
+  100% { transform: rotateX(0deg);   opacity: 1; }
+}
+.flap { display: inline-block; animation: flap .35s ease-out both; transform-origin: top; }
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--border) 0%, var(--bg-elev) 50%, var(--border) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+  border-radius: 8px;
+}
+
+/* Scrollbar polish */
+.thin-scroll::-webkit-scrollbar { height: 8px; width: 8px; }
+.thin-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+.thin-scroll::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
