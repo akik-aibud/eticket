@@ -25,10 +25,12 @@ interface Body {
 }
 
 export async function POST(req: NextRequest) {
-  const key = process.env.AI_GATEWAY_API_KEY;
-  if (!key) {
+  const anthropicKey = process.env.ANTHROPIC_API_KEY;
+  const geminiKey = process.env.GEMINI_API_KEY;
+  const gatewayKey = process.env.AI_GATEWAY_API_KEY;
+  if (!anthropicKey && !geminiKey && !gatewayKey) {
     return NextResponse.json({
-      error: "AI not configured. Set AI_GATEWAY_API_KEY in environment.",
+      error: "AI not configured. Set ANTHROPIC_API_KEY, GEMINI_API_KEY, or AI_GATEWAY_API_KEY.",
     }, { status: 503 });
   }
 
@@ -60,18 +62,63 @@ Do NOT invent stations or fares — only use what's given.`;
   });
 
   try {
+    // Primary: Anthropic (most reliable). Then Gemini (free), then Vercel Gateway.
+    if (anthropicKey) {
+      const resp = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: {
+          "x-api-key": anthropicKey,
+          "anthropic-version": "2023-06-01",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: process.env.ANTHROPIC_MODEL || "claude-haiku-4-5",
+          max_tokens: 600,
+          temperature: 0.3,
+          system: sys,
+          messages: [{ role: "user", content: usr }],
+        }),
+      });
+      if (!resp.ok) {
+        const text = await resp.text();
+        return NextResponse.json({ error: `Anthropic ${resp.status}: ${text.slice(0, 200)}` }, { status: 502 });
+      }
+      const data = await resp.json();
+      const text = (data?.content ?? []).map((b: { text?: string }) => b.text || "").join("") || "No suggestion produced.";
+      return NextResponse.json({ text });
+    }
+
+    // Google Gemini (free tier, no card needed).
+    if (geminiKey) {
+      const model = process.env.GEMINI_MODEL || "gemini-2.0-flash";
+      const resp = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${geminiKey}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            systemInstruction: { parts: [{ text: sys }] },
+            contents: [{ role: "user", parts: [{ text: usr }] }],
+            generationConfig: { maxOutputTokens: 600, temperature: 0.3 },
+          }),
+        }
+      );
+      if (!resp.ok) {
+        const text = await resp.text();
+        return NextResponse.json({ error: `Gemini ${resp.status}: ${text.slice(0, 200)}` }, { status: 502 });
+      }
+      const data = await resp.json();
+      const text = data?.candidates?.[0]?.content?.parts?.map((p: { text?: string }) => p.text).join("") ?? "No suggestion produced.";
+      return NextResponse.json({ text });
+    }
+
+    // Fallback: Vercel AI Gateway (requires a billing card on the gateway account).
     const resp = await fetch("https://ai-gateway.vercel.sh/v1/chat/completions", {
       method: "POST",
-      headers: {
-        "Authorization": `Bearer ${key}`,
-        "Content-Type": "application/json",
-      },
+      headers: { "Authorization": `Bearer ${gatewayKey}`, "Content-Type": "application/json" },
       body: JSON.stringify({
         model: "anthropic/claude-haiku-4-5",
-        messages: [
-          { role: "system", content: sys },
-          { role: "user", content: usr },
-        ],
+        messages: [{ role: "system", content: sys }, { role: "user", content: usr }],
         max_tokens: 500,
         temperature: 0.3,
       }),
